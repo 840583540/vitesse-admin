@@ -1,0 +1,7 @@
+{
+  "extends": "@antfu",
+  "rules": {
+    "no-console":"warn",
+    "prefer-promise-reject-errors": ["error", {"allowEmptyReject": true}]
+  }
+}
