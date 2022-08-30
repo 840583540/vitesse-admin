@@ -25,6 +25,11 @@ export const MENUS: IMenu [] = [
         path: '/staff-management',
         icon: 'i-carbon:home',
       },
+      {
+        name: '测试',
+        path: '/staff-management/test',
+        icon: 'i-carbon:home',
+      },
     ],
   },
 ]

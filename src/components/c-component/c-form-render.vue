@@ -98,6 +98,8 @@ defineExpose({
         </el-radio-group>
         <!-- eslint-disable-next-line vue/no-mutating-props -->
         <rule-form v-else-if="item.type === 'rule'" v-model="props.data[item.prop]" />
+        <!-- eslint-disable-next-line vue/no-mutating-props -->
+        <c-upload v-else-if="item.type === 'upload'" v-model="props.data[item.prop]" />
         <p v-else>
           不支持表单
         </p>

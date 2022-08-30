@@ -1,8 +1,9 @@
 <script setup lang="tsx">
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { ElMenuItem, ElSubMenu } from 'element-plus'
 import type { IMenu } from '~/enums/menus'
 import { MENUS } from '~/enums/menus'
+import LOGO from '~/assets/images/logo.svg'
 const route = useRoute()
 const commonStore = useCommonStore()
 
@@ -40,17 +41,17 @@ const MenuComponent = {
 </script>
 
 <template>
-  <div class="h-full" style="background-color: #282c34">
-    <a href="/" class="text-white text-center block leading-55px h-55px">
-      <i v-if="commonStore.isCollapse" class="i-carbon-show-data-cards inline-block" />
-      <span v-else>后台管理系统</span>
+  <div class="h-full" style="background-color: #fff">
+    <a href="/" class="text-white flex justify-center leading-55px h-55px bg-[#548cec]">
+      <img :src="LOGO" alt="admin" class="w-10 inline-block mr-2">
+      <span v-if="!commonStore.isCollapse">后台管理系统</span>
     </a>
     <el-menu
       :collapse="commonStore.isCollapse"
       :default-active="activeIndex"
       class="aside-menu w-full"
-      background-color="#282c34"
-      text-color="#fff"
+      background-color="#fff"
+      text-color="#404040"
       active-text-color="#409EFF"
       router
     >
@@ -59,14 +60,18 @@ const MenuComponent = {
   </div>
 </template>
 
-<style lang="css" scoped>
+<style lang="css">
 .aside-menu {
     border-right: none;
 }
 .aside-menu:not(.el-menu--collapse) {
-    width: 266px;
+    width: 200px;
 }
 .aside-menu .el-menu-item.is-active {
-    background: #1890ff;
+    background: rgba(232, 240, 255, 0.992);
+    border-right: 2px solid #409EFF;
+}
+.aside-menu .el-menu-item:hover {
+    background: rgba(232, 240, 255, 0.992);
 }
 </style>

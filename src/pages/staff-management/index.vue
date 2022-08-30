@@ -21,6 +21,14 @@ const tableProp = $ref({
       ],
     },
     {
+      type: 'upload',
+      prop: 'headPicture',
+      label: '头像',
+      rules: [
+        { required: true, message: '请输入姓名', trigger: 'blur' },
+      ],
+    },
+    {
       type: 'input',
       prop: 'phone',
       label: '电话',
@@ -115,9 +123,4 @@ const handleClassSubmit = () => {
 <route lang="yaml">
 meta:
   layout: home
-  name: 老师管理
-  menu: true
-  menuIndex: 4
-  isAdmin: true
-  icon: i-carbon:stress-breath-editor
 </route>

@@ -18,7 +18,12 @@ const route = useRoute()
 <template>
   <nav class="flex items-center h-full w-full justify-between">
     <div class="flex items-center">
-      <span class="i-carbon-collapse-categories inline-block cursor-pointer mr-2" @click="onChangeMenuCollapse" />
+      <span
+        class="inline-block cursor-pointer mr-2" :class="[
+          commonStore.isCollapse ? 'i-carbon:text-indent-more' : 'i-carbon:text-indent-less',
+        ]"
+        @click="onChangeMenuCollapse"
+      />
       <el-breadcrumb separator="/">
         <el-breadcrumb-item>
           {{ route.meta.name }}
